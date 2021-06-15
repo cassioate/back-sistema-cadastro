@@ -19,6 +19,6 @@ public class Materia {
 	private Long id;
 	private String nome;
 	private String instituicao;
-	private String cargaHoraria;
+	private String img;
 	
 }
