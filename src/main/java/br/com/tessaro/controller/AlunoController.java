@@ -3,6 +3,7 @@ package br.com.tessaro.controller;
 import java.util.List;
 import java.util.Optional;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,8 +12,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 
 import br.com.tessaro.model.Aluno;
 import br.com.tessaro.service.AlunoService;
@@ -40,6 +43,12 @@ public class AlunoController {
 	@PostMapping
 	public ResponseEntity<Aluno> insert(@RequestBody Aluno aluno) {
 		return new ResponseEntity<Aluno>(service.inserir(aluno), HttpStatus.CREATED);
+	}
+	
+	@CrossOrigin
+	@PutMapping("/{id}")
+	public ResponseEntity<Aluno> atualizar(@RequestBody Aluno aluno, @PathVariable Long id) {
+		return new ResponseEntity<Aluno>(service.atualizar(aluno), HttpStatus.CREATED);
 	}
 	
 }

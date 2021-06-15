@@ -26,5 +26,9 @@ public class AlunoService {
 	public Aluno inserir(Aluno aluno) {
 		return repository.save(aluno);
 	}
+	
+	public Aluno atualizar(Aluno aluno) {
+		return repository.save(aluno);
+	}
 
 }
